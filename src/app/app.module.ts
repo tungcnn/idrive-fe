@@ -11,6 +11,16 @@ import { DetailedInfoComponent } from './components/detailed-info/detailed-info.
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { DashboardComponent} from './components/dashboard/dashboard.component';
 import { DashboardMenuComponent} from './components/dashboard-menu/dashboard-menu.component';
+import { DashboardMenuComponent } from './components/dashboard-menu/dashboard-menu.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
+import { DashboardBookingsComponent } from './components/dashboard/dashboard-bookings/dashboard-bookings.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicle.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,11 +31,20 @@ import { DashboardMenuComponent} from './components/dashboard-menu/dashboard-men
     BannerComponent,
     DetailedInfoComponent,
     SearchResultComponent
+    DashboardMenuComponent,
+    DashboardComponent,
+    DashboardBookingsComponent,
+    AddVehicleComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
+        FormsModule,
+        HttpClientModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
