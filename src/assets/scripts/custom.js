@@ -820,7 +820,7 @@ $(document).ready(function(){
 		var winWidth = $(window).width();
 		var headerHeight = $("#header-container").height(); // height on which the sticky header will shows
 
-		$('.fs-inner-container, .fs-inner-container.map-fixed, #dashboard').css('padding-top', headerHeight);
+		$('.fs-inner-container, .fs-inner-container.map-fixed, #dashboard-menu').css('padding-top', headerHeight);
 
 		if(winWidth<992) {
 			$('.fs-inner-container.map-fixed').insertBefore('.fs-inner-container.content');
@@ -835,7 +835,7 @@ $(document).ready(function(){
     /*  Counters
     /*----------------------------------------------------*/
     $(window).on('load', function() {
-		$('.dashboard-stat-content h4').counterUp({
+		$('.dashboard-menu-stat-content h4').counterUp({
 	        delay: 100,
 	        time: 800
 	    });
@@ -857,7 +857,7 @@ $(document).ready(function(){
 	/*----------------------------------------------------*/
 	/* Dashboard Scripts
 	/*----------------------------------------------------*/
-    $('.dashboard-nav ul li a').on('click', function(){
+    $('.dashboard-menu-nav ul li a').on('click', function(){
 		if ($(this).closest('li').has('ul').length) {
 			$(this).parent('li').toggleClass('active');
 		}
@@ -870,9 +870,9 @@ $(document).ready(function(){
 		var winWidth = $(window).width();
 
 		if(winWidth>992) {
-			$(".dashboard-nav-inner").css('max-height', wrapperHeight-headerHeight);
+			$(".dashboard-menu-nav-inner").css('max-height', wrapperHeight-headerHeight);
 		} else {
-			$(".dashboard-nav-inner").css('max-height', '');
+			$(".dashboard-menu-nav-inner").css('max-height', '');
 		}
 	});
 
@@ -919,11 +919,11 @@ $(document).ready(function(){
 
 
 	// Responsive Nav Trigger
-    $('.dashboard-responsive-nav-trigger').on('click', function(e){
+    $('.dashboard-menu-responsive-nav-trigger').on('click', function(e){
     	e.preventDefault();
 		$(this).toggleClass('active');
 
-		var dashboardNavContainer = $('body').find(".dashboard-nav");
+		var dashboardNavContainer = $('body').find(".dashboard-menu-nav");
 
 		if( $(this).hasClass('active') ){
 			$(dashboardNavContainer).addClass('active');
@@ -994,7 +994,7 @@ $(document).ready(function(){
 
 					// Refresh sotrable script
 					$(".slots-container").sortable('refresh');
-			} 
+			}
 
 			// Validation Error
 			else {
@@ -1012,14 +1012,14 @@ $(document).ready(function(){
 				daySlots.find(".no-slots")
 						.addClass("no-slots-fadein")
 						.removeClass("no-slots-fadeout");
-			} 
+			}
 		}
 		hideSlotInfo();
 
 
 		// Removing Slot
 	    daySlots.find('.remove-slot').bind('click', function() {
-			$(this).closest('.single-slot').animate({height: 0, opacity: 0}, 'fast', function() { 
+			$(this).closest('.single-slot').animate({height: 0, opacity: 0}, 'fast', function() {
 				$(this).remove();
 			});
 
@@ -1037,7 +1037,7 @@ $(document).ready(function(){
 				daySlots.find(".no-slots")
 						.removeClass("no-slots-fadein")
 						.addClass("no-slots-fadeout");
-			} 
+			}
 		});
 
     });
@@ -1059,7 +1059,7 @@ $(document).ready(function(){
 	      var picker = $(this),
 	          p = picker.find('button:last-child'),
 	          m = picker.find('button:first-child'),
-	          input = picker.find('input'),                 
+	          input = picker.find('input'),
 	          min = parseInt(input.attr('min'), 10),
 	          max = parseInt(input.attr('max'), 10),
 	          inputFunc = function(picker) {
@@ -1070,7 +1070,7 @@ $(document).ready(function(){
 	              m.prop(dis, true);
 	            } else if (i >= max) {
 	              input.val(max);
-	              p.prop(dis, true); 
+	              p.prop(dis, true);
 	              m.prop(dis, false);
 	            } else {
 	              p.prop(dis, false);
