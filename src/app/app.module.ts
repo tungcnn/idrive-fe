@@ -9,6 +9,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { DashboardMenuComponent } from './components/dashboard-menu/dashboard-menu.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
+import { DashboardBookingsComponent } from './components/dashboard/dashboard-bookings/dashboard-bookings.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireStorageModule} from '@angular/fire/storage';
@@ -26,6 +27,11 @@ import {HttpClientModule} from '@angular/common/http';
     BannerComponent,
     DashboardMenuComponent,
     DashboardComponent,
+    DashboardBookingsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
     AddVehicleComponent
   ],
     imports: [
