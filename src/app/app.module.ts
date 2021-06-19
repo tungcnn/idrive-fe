@@ -19,6 +19,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicle.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {HttpClientModule} from '@angular/common/http';
     DashboardMenuComponent,
     DashboardComponent,
     DashboardBookingsComponent,
-    AddVehicleComponent
+    AddVehicleComponent,
+    CheckoutComponent
   ],
     imports: [
         BrowserModule,
