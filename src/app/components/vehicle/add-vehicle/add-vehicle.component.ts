@@ -5,6 +5,7 @@ import {LocationService} from '../../../service/location/location.service';
 import {NgForm} from '@angular/forms';
 import {Vehicle} from '../../../model/vehicle';
 import {VehicleService} from '../../../service/vehicle/vehicle.service';
+import {Location} from '../../../model/location';
 
 @Component({
   selector: 'app-add-vehicle',

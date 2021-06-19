@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
 import { DashboardMenuComponent } from './components/dashboard-menu/dashboard-menu.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import { DashboardBookingsComponent } from './components/dashboard/dashboard-bookings/dashboard-bookings.component';
@@ -25,6 +27,8 @@ import {HttpClientModule} from '@angular/common/http';
     FooterComponent,
     HomePageComponent,
     BannerComponent,
+    DetailedInfoComponent,
+    SearchResultComponent,
     DashboardMenuComponent,
     DashboardComponent,
     DashboardBookingsComponent,
