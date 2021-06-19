@@ -11,6 +11,7 @@ import { DashboardMenuComponent } from './components/dashboard-menu/dashboard-me
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import { DashboardBookingsComponent } from './components/dashboard/dashboard-bookings/dashboard-bookings.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,7 @@ import { DashboardBookingsComponent } from './components/dashboard/dashboard-boo
     BannerComponent,
     DashboardMenuComponent,
     DashboardComponent,
-    DashboardBookingsComponent
+    DashboardBookingsComponent,
   ],
   imports: [
     BrowserModule,

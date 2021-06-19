@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -8,7 +8,41 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class DashboardBookingsComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+ users = [
+   {
+    renter: 'abc',
+    vehicleType:'Car',
+    startTime: '28/00/00',
+    endTime:'29/00/00',
+    price:'123',
+    owner:'abc',
+    phone:'0987654',
+    email:'hda@gmail.com'
+  },
+   {
+     renter: 'abc',
+     vehicleType:'Car',
+     startTime: '28/00/00',
+     endTime:'29/00/00',
+     price:'123',
+     owner:'abc',
+     phone:'0987654',
+     email:'hda@gmail.com'
+   },
+   {
+     renter: 'abc',
+     vehicleType:'Car',
+     startTime: '28/00/00',
+     endTime:'29/00/00',
+     price:'123',
+     owner:'abc',
+     phone:'0987654',
+     email:'hda@gmail.com'
+   }
+  ];
+
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -19,4 +53,11 @@ export class DashboardBookingsComponent implements OnInit {
     });
   }
 
+  searchByVehicle(Vehicle) {
+    Vehicle.value
+  }
+
+  searchByDate(Date) {
+    Date.value
+  }
 }

@@ -39,13 +39,17 @@
                 <option>Burger House</option>
                 <option>Tom's Restaurant</option>
                 <option>Hotel Govendor</option>
-              </select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%;" title=""><a class="chosen-single"><span>All Listings</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div>
+              </select>
+              <div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%;" title="">
+             <span><input type="text" style="height:34px" placeholder="VehicleType" (change)="searchByVehicle(this)"></span>
+                <ul class="chosen-results">
+                </ul></div>
             </div>
           </div>
 
           <!-- Date Range -->
           <div id="booking-date-range">
-            <span>May 21, 2021 - June 19, 2021</span>
+           <input type="date" style="height: 34px" (change)="searchByDate(this)">
           </div>
         </div>
 
@@ -63,40 +67,40 @@
         <h4>Booking Requests</h4>
         <ul>
 
-          <li class="pending-booking">
+          <li class="pending-booking" *ngFor="let user of users">
             <div class="list-box-listing bookings">
               <div class="list-box-listing-img"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=120" alt=""></div>
               <div class="list-box-listing-content">
                 <div class="inner">
-                  <h3>Sunny and Modern Apartment <span class="booking-status pending">Pending</span><span class="booking-status unpaid">Unpaid</span></h3>
+                  <h3>{{user.renter}} <span class="booking-status pending">Pending</span><span class="booking-status unpaid">Unpaid</span></h3>
 
                   <div class="inner-booking-list">
                     <h5>Booking Date:</h5>
                     <ul class="booking-list">
-                      <li class="highlighted">20.08.2018 - 24.08.2018</li>
+                      <li class="highlighted">{{user.startTime}} - {{user.endTime}}</li>
                     </ul>
                   </div>
 
                   <div class="inner-booking-list">
                     <h5>Booking Details:</h5>
                     <ul class="booking-list">
-                      <li class="highlighted">2 Adults</li>
+                      <li class="highlighted">{{user.vehicleType}}</li>
                     </ul>
                   </div>
 
                   <div class="inner-booking-list">
                     <h5>Price:</h5>
                     <ul class="booking-list">
-                      <li class="highlighted">$147</li>
+                      <li class="highlighted">{{user.price}}</li>
                     </ul>
                   </div>
 
                   <div class="inner-booking-list">
                     <h5>Client:</h5>
                     <ul class="booking-list">
-                      <li>John Smith</li>
-                      <li>john@example.com</li>
-                      <li>123-456-789</li>
+                      <li>{{user.owner}}</li>
+                      <li>{{user.email}}</li>
+                      <li>{{user.phone}}</li>
                     </ul>
                   </div>
 
@@ -111,80 +115,6 @@
             </div>
           </li>
 
-          <li class="approved-booking">
-            <div class="list-box-listing bookings">
-              <div class="list-box-listing-img"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=120" alt=""></div>
-              <div class="list-box-listing-content">
-                <div class="inner">
-                  <h3>Burger House <span class="booking-status">Approved</span></h3>
-
-                  <div class="inner-booking-list">
-                    <h5>Booking Date:</h5>
-                    <ul class="booking-list">
-                      <li class="highlighted">10.12.2019 at 12:30 pm - 13:30 pm</li>
-                    </ul>
-                  </div>
-
-                  <div class="inner-booking-list">
-                    <h5>Booking Details:</h5>
-                    <ul class="booking-list">
-                      <li class="highlighted">2 Adults, 2 Children</li>
-                    </ul>
-                  </div>
-
-                  <div class="inner-booking-list">
-                    <h5>Client:</h5>
-                    <ul class="booking-list">
-                      <li>Kathy Brown</li>
-                      <li>kathy@example.com</li>
-                      <li>123-456-789</li>
-                    </ul>
-                  </div>
-
-                  <a href="#small-dialog" class="rate-review popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i> Send Message</a>
-
-                </div>
-              </div>
-            </div>
-            <div class="buttons-to-right">
-              <a href="#" class="button gray reject"><i class="sl sl-icon-close"></i> Cancel</a>
-            </div>
-          </li>
-
-          <li class="canceled-booking">
-            <div class="list-box-listing bookings">
-              <div class="list-box-listing-img"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=120" alt=""></div>
-              <div class="list-box-listing-content">
-                <div class="inner">
-                  <h3>Tom's Restaurant <span class="booking-status">Canceled</span></h3>
-
-                  <div class="inner-booking-list">
-                    <h5>Booking Date:</h5>
-                    <ul class="booking-list">
-                      <li class="highlighted">21.10.2019 at 9:30 am - 10:30 am</li>
-                    </ul>
-                  </div>
-
-                  <div class="inner-booking-list">
-                    <h5>Booking Details:</h5>
-                    <ul class="booking-list">
-                      <li class="highlighted">2 Adults</li>
-                    </ul>
-                  </div>
-
-                  <div class="inner-booking-list">
-                    <h5>Client:</h5>
-                    <ul class="booking-list">
-                      <li>Kathy Brown</li>
-                      <li>kathy@example.com</li>
-                      <li>123-456-789</li>
-                    </ul>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </li>
 
         </ul>
       </div>
