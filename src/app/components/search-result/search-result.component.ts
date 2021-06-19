@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Vehicle} from '../../model/vehicle';
 import {SearchService} from '../../service/search-car/search.service';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-search-result',
