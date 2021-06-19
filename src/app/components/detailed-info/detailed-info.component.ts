@@ -15,18 +15,19 @@ export class DetailedInfoComponent implements OnInit {
 
   constructor(private carDetailService: CarDetailService,
               private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.paramMap.subscribe(paramMap => {
-      this.vehicleId = +paramMap.get('id');
-      this.getVehicleById(this.vehicleId);
-    });
   }
 
   ngOnInit() {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.vehicleId = params.vehicleId;
+      this.getVehicleById(this.vehicleId);
+    })
   }
 
   getVehicleById(id: number) {
     this.carDetailService.getVehicleById(id).subscribe(v => {
       this.thisVehicle = v;
+      console.log(this.thisVehicle);
     });
   }
 
