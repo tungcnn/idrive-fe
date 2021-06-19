@@ -147,6 +147,7 @@
       <div class="right-side">
         <div class="header-widget">
           <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>
+          <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-pencil"></i> Sign Up</a>
           <a href="dashboard-add-listing.html" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
         </div>
       </div>
@@ -156,7 +157,7 @@
       <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
 
         <div class="small-dialog-header">
-          <h3>Sign In</h3>
+          <h3 style="color: black">Sign In</h3>
         </div>
 
         <!--Tabs -->
@@ -171,19 +172,19 @@
 
             <!-- Login -->
             <div class="tab-content" id="tab1" style="display: none;">
-              <form method="post" class="login">
+              <form class="login" [formGroup]="loginForm" (ngSubmit)="login()">
 
                 <p class="form-row form-row-wide">
                   <label for="username">Username:
                     <i class="im im-icon-Male"></i>
-                    <input type="text" class="input-text" name="username" id="username" value="" />
+                    <input [formControlName]="'username'" required autofocus type="text" class="input-text" name="username" id="username" value="" />
                   </label>
                 </p>
 
                 <p class="form-row form-row-wide">
                   <label for="password">Password:
                     <i class="im im-icon-Lock-2"></i>
-                    <input class="input-text" type="password" name="password" id="password"/>
+                    <input [formControlName]="'password'" required autofocus class="input-text" type="password" name="password" id="password"/>
                   </label>
                   <span class="lost_password">
 										<a href="#" >Lost Your Password?</a>
@@ -204,33 +205,33 @@
             <!-- Register -->
             <div class="tab-content" id="tab2" style="display: none;">
 
-              <form method="post" class="register">
+              <form method="post" class="register" [formGroup]="signupForm" (ngSubmit)="signup()">
 
                 <p class="form-row form-row-wide">
                   <label for="username2">Username:
                     <i class="im im-icon-Male"></i>
-                    <input type="text" class="input-text" name="username" id="username2" value="" />
+                    <input [formControlName]="'username'" type="text" class="input-text" name="username" id="username2" value="" required autofocus/>
                   </label>
                 </p>
 
                 <p class="form-row form-row-wide">
                   <label for="email2">Email Address:
                     <i class="im im-icon-Mail"></i>
-                    <input type="text" class="input-text" name="email" id="email2" value="" />
+                    <input [formControlName]="'email'" type="text" class="input-text" name="email" id="email2" value="" required autofocus/>
                   </label>
                 </p>
 
                 <p class="form-row form-row-wide">
                   <label for="password1">Password:
                     <i class="im im-icon-Lock-2"></i>
-                    <input class="input-text" type="password" name="password1" id="password1"/>
+                    <input [formControlName]="'password'" class="input-text" type="password" name="password1" id="password1" required autofocus/>
                   </label>
                 </p>
 
                 <p class="form-row form-row-wide">
-                  <label for="password2">Repeat Password:
-                    <i class="im im-icon-Lock-2"></i>
-                    <input class="input-text" type="password" name="password2" id="password2"/>
+                  <label for="password2">Full Name:
+                    <i class="im im-icon-Male-2"></i>
+                    <input [formControlName]="'fullName'" class="input-text" type="text" name="password2" id="password2" required autofocus/>
                   </label>
                 </p>
 
@@ -243,6 +244,10 @@
         </div>
       </div>
       <!-- Sign In Popup / End -->
+
+<!--      Logged In-->
+
+<!--      Logged In End-->
 
     </div>
   </div>
