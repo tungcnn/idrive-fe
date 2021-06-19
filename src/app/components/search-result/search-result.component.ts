@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Vehicle} from '../../model/vehicle';
 import {SearchService} from '../../service/search-car/search.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-search-result',
@@ -9,8 +10,16 @@ import {SearchService} from '../../service/search-car/search.service';
 })
 export class SearchResultComponent implements OnInit {
   listResults: Vehicle[] = [];
-
-  constructor(private searchService: SearchService) { }
+  locationName = '';
+  typeName = '';
+  constructor(private searchService: SearchService,
+              private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.paramMap.subscribe(paramMap => {
+      this.locationName = paramMap.get('locationName');
+      this.typeName = paramMap.get('typeName');
+      this.searchVehicles(this.locationName, this.typeName);
+    });
+  }
 
   ngOnInit() {
   }
