@@ -20,11 +20,13 @@ const routes: Routes = [
   {
     path: 'search-result/car-detail',
     component: DetailedInfoComponent
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent
   },
   {
-    path:'dashboard_bookings',
+    path: 'dashboard_bookings',
     component: DashboardBookingsComponent
   },
   {
