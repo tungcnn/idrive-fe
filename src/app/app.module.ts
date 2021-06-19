@@ -9,6 +9,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { DashboardMenuComponent } from './components/dashboard-menu/dashboard-menu.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
+import { DashboardBookingsComponent } from './components/dashboard/dashboard-bookings/dashboard-bookings.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
     HomePageComponent,
     BannerComponent,
     DashboardMenuComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashboardBookingsComponent
   ],
   imports: [
     BrowserModule,
