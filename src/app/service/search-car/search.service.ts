@@ -12,15 +12,15 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
-  getVehicleByLocation(location: string): Observable<Vehicle[]> {
-    return this.http.get<Vehicle[]>(`${API_URL}/vehicles/${location}`);
+  getVehicleByLocation(locationId: number): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(`${API_URL}/vehicles/findByLocation/${locationId}`);
   }
 
-  getVehicleByType(vehicleType: string): Observable<Vehicle[]> {
-    return this.http.get<Vehicle[]>(`${API_URL}/vehicles/${vehicleType}`);
+  getVehicleByType(vehicleTypeId: number): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(`${API_URL}/vehicles/findByVehicleType/${vehicleTypeId}`);
   }
 
-  getVehicleByLocationAndType(location: string, vehicleBrand: string): Observable<Vehicle[]> {
-    return this.http.get<Vehicle[]>(`${API_URL}/vehicles/${location}/${vehicleBrand}`);
+  getVehicleByLocationAndType(locationId: number, vehicleTypeId: number): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(`${API_URL}/vehicles/findByBoth/${locationId}/${vehicleTypeId}`);
   }
 }

@@ -31,4 +31,12 @@ export class VehicleService {
   public delete(id: number): Observable<void> {
     return this.http.delete<void>(`${apiUrl}/vehicles/${id}`);
   }
+
+  public getByLocation(id: number): Observable<Vehicle> {
+    return this.http.get<Vehicle>(`${apiUrl}/vehicles/findByLocation/${id}`);
+  }
+
+  public getByVehicleType(id: number): Observable<Vehicle> {
+    return this.http.get<Vehicle>(`${apiUrl}/vehicles/findByVehicleType/${id}`);
+  }
 }

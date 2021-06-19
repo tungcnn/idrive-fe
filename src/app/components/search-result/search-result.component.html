@@ -267,7 +267,7 @@
       <div class="row">
 
         <!-- Listing Item -->
-        <div class="col-lg-4 col-md-6">
+        <div *ngFor="let result of listResults" class="col-lg-4 col-md-6">
           <a [routerLink]="['car-detail']" class="listing-item-container compact">
             <div class="listing-item">
               <img src="images/listing-item-01.jpg" alt="">
@@ -276,8 +276,8 @@
 
               <div class="listing-item-content">
                 <div class="numerical-rating" data-rating="3.5"></div>
-                <h3>Tom's Restaurant <i class="verified-icon"></i></h3>
-                <span>964 School Street, New York</span>
+                <h3>{{result.description}} <i class="verified-icon"></i></h3>
+                <span>{{result.location}}</span>
               </div>
               <span class="like-icon"></span>
             </div>
@@ -285,102 +285,6 @@
         </div>
         <!-- Listing Item / End -->
 
-        <!-- Listing Item -->
-        <div class="col-lg-4 col-md-6">
-          <a href="listings-single-page.html" class="listing-item-container compact">
-            <div class="listing-item">
-              <img src="images/listing-item-02.jpg" alt="">
-              <div class="listing-item-details">
-                <ul>
-                  <li>Friday, August 10</li>
-                </ul>
-              </div>
-              <div class="listing-item-content">
-                <div class="numerical-rating" data-rating="5.0"></div>
-                <h3>Sticky Band</h3>
-                <span>Bishop Avenue, New York</span>
-              </div>
-              <span class="like-icon"></span>
-            </div>
-          </a>
-        </div>
-        <!-- Listing Item / End -->
-
-        <!-- Listing Item -->
-        <div class="col-lg-4 col-md-6">
-          <a href="listings-single-page.html" class="listing-item-container compact">
-            <div class="listing-item">
-              <img src="images/listing-item-03.jpg" alt="">
-              <div class="listing-item-details">
-                <ul>
-                  <li>Starting from $59 per night</li>
-                </ul>
-              </div>
-              <div class="listing-item-content">
-                <div class="numerical-rating" data-rating="2.0"></div>
-                <h3>Hotel Govendor</h3>
-                <span>778 Country Street, New York</span>
-              </div>
-              <span class="like-icon"></span>
-            </div>
-
-          </a>
-        </div>
-        <!-- Listing Item / End -->
-
-        <!-- Listing Item -->
-        <div class="col-lg-4 col-md-6">
-          <a href="listings-single-page.html" class="listing-item-container compact">
-            <div class="listing-item">
-              <img src="images/listing-item-04.jpg" alt="">
-
-              <div class="listing-badge now-open">Now Open</div>
-
-              <div class="listing-item-content">
-                <div class="numerical-rating" data-rating="5.0"></div>
-                <h3>Burger House <i class="verified-icon"></i></h3>
-                <span>2726 Shinn Street, New York</span>
-              </div>
-              <span class="like-icon"></span>
-            </div>
-          </a>
-        </div>
-        <!-- Listing Item / End -->
-
-        <!-- Listing Item -->
-        <div class="col-lg-4 col-md-6">
-          <a href="listings-single-page.html" class="listing-item-container compact">
-            <div class="listing-item">
-              <img src="images/listing-item-05.jpg" alt="">
-              <div class="listing-item-content">
-                <div class="numerical-rating" data-rating="3.5"></div>
-                <h3>Airport</h3>
-                <span>1512 Duncan Avenue, New York</span>
-              </div>
-              <span class="like-icon"></span>
-            </div>
-          </a>
-        </div>
-        <!-- Listing Item / End -->
-
-        <!-- Listing Item -->
-        <div class="col-lg-4 col-md-6">
-          <a href="listings-single-page.html" class="listing-item-container compact">
-            <div class="listing-item">
-              <img src="images/listing-item-06.jpg" alt="">
-
-              <div class="listing-badge now-closed">Now Closed</div>
-
-              <div class="listing-item-content">
-                <div class="numerical-rating" data-rating="4.5"></div>
-                <h3>Think Coffee</h3>
-                <span>215 Terry Lane, New York</span>
-              </div>
-              <span class="like-icon"></span>
-            </div>
-          </a>
-        </div>
-        <!-- Listing Item / End -->
 
       </div>
 
