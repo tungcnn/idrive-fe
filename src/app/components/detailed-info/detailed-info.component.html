@@ -30,7 +30,6 @@
         <ul class="listing-nav">
           <li><a href="#listing-overview" class="active">Overview</a></li>
           <li><a href="#listing-gallery">Gallery</a></li>
-          <li><a href="#listing-location">Location</a></li>
           <li><a href="#listing-reviews">Reviews</a></li>
           <li><a href="#add-review">Add Review</a></li>
         </ul>
@@ -385,31 +384,15 @@
 
           <!-- Date Range Picker - docs: http://www.daterangepicker.com/ -->
           <div class="col-lg-12">
-            <input type="text" id="date-picker" placeholder="Date" readonly="readonly">
+            <label for="startDate">Start Date</label>
+            <input type="date" id="startDate" placeholder="Start Date">
           </div>
 
           <!-- Panel Dropdown -->
           <div class="col-lg-12">
-            <div class="panel-dropdown">
-              <a href="#">Guests <span class="qtyTotal" name="qtyTotal">1</span></a>
-              <div class="panel-dropdown-content">
-
-                <!-- Quantity Buttons -->
-                <div class="qtyButtons">
-                  <div class="qtyTitle">Adults</div>
-                  <input type="text" name="qtyInput" value="1">
-                </div>
-
-                <div class="qtyButtons">
-                  <div class="qtyTitle">Childrens</div>
-                  <input type="text" name="qtyInput" value="0">
-                </div>
-
-              </div>
-            </div>
+            <label for="endDate">End Date</label>
+            <input type="date" id="endDate" placeholder="End Date">
           </div>
-          <!-- Panel Dropdown / End -->
-
         </div>
 
         <!-- Book Now -->
