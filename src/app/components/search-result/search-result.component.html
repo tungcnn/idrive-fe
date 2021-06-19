@@ -1,0 +1,313 @@
+<!-- Right Side Content / End -->
+<link rel="stylesheet" href="../../../assets/css/main-color.css" id="colors">
+<link rel="stylesheet" href="../../../assets/css/style.css">
+<div class="right-side">
+  <div class="header-widget">
+    <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>
+    <a href="dashboard-add-listing.html" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
+  </div>
+</div>
+<!-- Right Side Content / End -->
+
+<!-- Sign In Popup -->
+<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+  <div class="small-dialog-header">
+    <h3>Sign In</h3>
+  </div>
+
+  <!--Tabs -->
+  <div class="sign-in-form style-1">
+
+    <ul class="tabs-nav">
+      <li class=""><a href="#tab1">Log In</a></li>
+      <li><a href="#tab2">Register</a></li>
+    </ul>
+
+    <div class="tabs-container alt">
+
+      <!-- Login -->
+      <div class="tab-content" id="tab1" style="display: none;">
+        <form method="post" class="login">
+
+          <p class="form-row form-row-wide">
+            <label for="username">Username:
+              <i class="im im-icon-Male"></i>
+              <input type="text" class="input-text" name="username" id="username" value="" />
+            </label>
+          </p>
+
+          <p class="form-row form-row-wide">
+            <label for="password">Password:
+              <i class="im im-icon-Lock-2"></i>
+              <input class="input-text" type="password" name="password" id="password"/>
+            </label>
+            <span class="lost_password">
+										<a href="#" >Lost Your Password?</a>
+									</span>
+          </p>
+
+          <div class="form-row">
+            <input type="submit" class="button border margin-top-5" name="login" value="Login" />
+            <div class="checkboxes margin-top-10">
+              <input id="remember-me" type="checkbox" name="check">
+              <label for="remember-me">Remember Me</label>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Register -->
+      <div class="tab-content" id="tab2" style="display: none;">
+
+        <form method="post" class="register">
+
+          <p class="form-row form-row-wide">
+            <label for="username2">Username:
+              <i class="im im-icon-Male"></i>
+              <input type="text" class="input-text" name="username" id="username2" value="" />
+            </label>
+          </p>
+
+          <p class="form-row form-row-wide">
+            <label for="email2">Email Address:
+              <i class="im im-icon-Mail"></i>
+              <input type="text" class="input-text" name="email" id="email2" value="" />
+            </label>
+          </p>
+
+          <p class="form-row form-row-wide">
+            <label for="password1">Password:
+              <i class="im im-icon-Lock-2"></i>
+              <input class="input-text" type="password" name="password1" id="password1"/>
+            </label>
+          </p>
+
+          <p class="form-row form-row-wide">
+            <label for="password2">Repeat Password:
+              <i class="im im-icon-Lock-2"></i>
+              <input class="input-text" type="password" name="password2" id="password2"/>
+            </label>
+          </p>
+
+          <input type="submit" class="button border fw margin-top-10" name="register" value="Register" />
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Sign In Popup / End -->
+
+
+<!-- Header / End -->
+
+<div class="clearfix"></div>
+<!-- Header Container / End -->
+
+
+<!-- Titlebar
+================================================== -->
+<div id="titlebar" class="gradient">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h2>Listings</h2><span>Grid Layout With Sidebar</span>
+
+        <!-- Breadcrumbs -->
+        <nav id="breadcrumbs">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>Listings</li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+  <div class="row">
+
+    <!-- Search -->
+    <div class="col-md-12">
+      <div class="main-search-input gray-style margin-top-0 margin-bottom-10">
+
+        <div class="main-search-input-item">
+          <input type="text" placeholder="What are you looking for?" value=""/>
+        </div>
+
+        <div class="main-search-input-item location">
+          <div id="autocomplete-container">
+            <input id="autocomplete-input" type="text" placeholder="Location">
+          </div>
+          <a href="#"><i class="fa fa-map-marker"></i></a>
+        </div>
+
+        <div class="main-search-input-item">
+          <select data-placeholder="All Categories" class="chosen-select" >
+            <option>All Categories</option>
+            <option>Shops</option>
+            <option>Hotels</option>
+            <option>Restaurants</option>
+            <option>Fitness</option>
+            <option>Events</option>
+          </select>
+        </div>
+
+        <button class="button">Search</button>
+      </div>
+    </div>
+    <!-- Search Section / End -->
+
+
+    <div class="col-md-12">
+
+      <!-- Sorting - Filtering Section -->
+      <div class="row margin-bottom-25 margin-top-30">
+
+        <div class="col-md-6">
+          <!-- Layout Switcher -->
+          <div class="layout-switcher">
+            <a href="#" class="grid active"><i class="fa fa-th"></i></a>
+            <a href="listings-list-full-width.html" class="list"><i class="fa fa-align-justify"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="fullwidth-filters">
+
+            <!-- Panel Dropdown -->
+            <div class="panel-dropdown wide float-right">
+              <a href="#">More Filters</a>
+              <div class="panel-dropdown-content checkboxes">
+
+                <!-- Checkboxes -->
+                <div class="row">
+                  <div class="col-md-6">
+                    <input id="check-a" type="checkbox" name="check">
+                    <label for="check-a">Elevator in building</label>
+
+                    <input id="check-b" type="checkbox" name="check">
+                    <label for="check-b">Friendly workspace</label>
+
+                    <input id="check-c" type="checkbox" name="check">
+                    <label for="check-c">Instant Book</label>
+
+                    <input id="check-d" type="checkbox" name="check">
+                    <label for="check-d">Wireless Internet</label>
+                  </div>
+
+                  <div class="col-md-6">
+                    <input id="check-e" type="checkbox" name="check" >
+                    <label for="check-e">Free parking on premises</label>
+
+                    <input id="check-f" type="checkbox" name="check" >
+                    <label for="check-f">Free parking on street</label>
+
+                    <input id="check-g" type="checkbox" name="check">
+                    <label for="check-g">Smoking allowed</label>
+
+                    <input id="check-h" type="checkbox" name="check">
+                    <label for="check-h">Events</label>
+                  </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="panel-buttons">
+                  <button class="panel-cancel">Cancel</button>
+                  <button class="panel-apply">Apply</button>
+                </div>
+
+              </div>
+            </div>
+            <!-- Panel Dropdown / End -->
+
+            <!-- Panel Dropdown-->
+            <div class="panel-dropdown float-right">
+              <a href="#">Distance Radius</a>
+              <div class="panel-dropdown-content">
+                <input class="distance-radius" type="range" min="1" max="100" step="1" value="50" data-title="Radius around selected destination">
+                <div class="panel-buttons">
+                  <button class="panel-cancel">Disable</button>
+                  <button class="panel-apply">Apply</button>
+                </div>
+              </div>
+            </div>
+            <!-- Panel Dropdown / End -->
+
+            <!-- Sort by -->
+            <div class="sort-by">
+              <div class="sort-by-select">
+                <select data-placeholder="Default order" class="chosen-select-no-single">
+                  <option>Default Order</option>
+                  <option>Highest Rated</option>
+                  <option>Most Reviewed</option>
+                  <option>Newest Listings</option>
+                  <option>Oldest Listings</option>
+                </select>
+              </div>
+            </div>
+            <!-- Sort by / End -->
+
+          </div>
+        </div>
+
+      </div>
+      <!-- Sorting - Filtering Section / End -->
+
+
+      <div class="row">
+
+        <!-- Listing Item -->
+        <div *ngFor="let result of listResults" class="col-lg-4 col-md-6">
+          <a (click)="passDetails(result.id)" class="listing-item-container compact">
+            <div class="listing-item">
+              <img src="images/listing-item-01.jpg" alt="">
+
+              <div class="listing-badge now-open">Now Open</div>
+
+              <div class="listing-item-content">
+                <div class="numerical-rating" data-rating="3.5"></div>
+                <h3>{{result.description}} <i class="verified-icon"></i></h3>
+                <span>{{result.location}}</span>
+              </div>
+              <span class="like-icon"></span>
+            </div>
+          </a>
+        </div>
+        <!-- Listing Item / End -->
+
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Pagination -->
+          <div class="pagination-container margin-top-20 margin-bottom-40">
+            <nav class="pagination">
+              <ul>
+                <li><a href="#" class="current-page">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination / End -->
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,191 @@
+
+<app-dashboard-menu></app-dashboard-menu>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/main-color.css" id="colors">
+
+<div class="dashboard-content">
+
+  <!-- Titlebar -->
+  <div id="titlebar">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Bookings</h2>
+        <!-- Breadcrumbs -->
+        <nav id="breadcrumbs">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li>Bookings</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <!-- Listings -->
+    <div class="col-lg-12 col-md-12">
+      <div class="dashboard-list-box margin-top-0">
+
+        <!-- Booking Requests Filters  -->
+        <div class="booking-requests-filter">
+
+          <!-- Sort by -->
+          <div class="sort-by">
+            <div class="sort-by-select">
+              <select data-placeholder="Default order" class="chosen-select-no-single" style="display: none;">
+                <option>All Listings</option>
+                <option>Burger House</option>
+                <option>Tom's Restaurant</option>
+                <option>Hotel Govendor</option>
+              </select>
+              <div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%;" title="">
+             <span><input type="text" style="height:34px" placeholder="VehicleType" (change)="searchByVehicle(this)"></span>
+                <ul class="chosen-results">
+                </ul></div>
+            </div>
+          </div>
+
+          <!-- Date Range -->
+          <div id="booking-date-range">
+           <input type="date" style="height: 34px" (change)="searchByDate(this)">
+          </div>
+        </div>
+
+        <!-- Reply to review popup -->
+        <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+          <div class="small-dialog-header">
+            <h3>Send Message</h3>
+          </div>
+          <div class="message-reply margin-top-0">
+            <textarea cols="40" rows="3" placeholder="Your Message to Kathy"></textarea>
+            <button class="button">Send</button>
+          </div>
+        </div>
+
+        <h4>Booking Requests</h4>
+        <ul>
+
+          <li class="pending-booking" *ngFor="let user of users">
+            <div class="list-box-listing bookings">
+              <div class="list-box-listing-img"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=120" alt=""></div>
+              <div class="list-box-listing-content">
+                <div class="inner">
+                  <h3>{{user.renter}} <span class="booking-status pending">Pending</span><span class="booking-status unpaid">Unpaid</span></h3>
+
+                  <div class="inner-booking-list">
+                    <h5>Booking Date:</h5>
+                    <ul class="booking-list">
+                      <li class="highlighted">{{user.startTime}} - {{user.endTime}}</li>
+                    </ul>
+                  </div>
+
+                  <div class="inner-booking-list">
+                    <h5>Booking Details:</h5>
+                    <ul class="booking-list">
+                      <li class="highlighted">{{user.vehicleType}}</li>
+                    </ul>
+                  </div>
+
+                  <div class="inner-booking-list">
+                    <h5>Price:</h5>
+                    <ul class="booking-list">
+                      <li class="highlighted">{{user.price}}</li>
+                    </ul>
+                  </div>
+
+                  <div class="inner-booking-list">
+                    <h5>Client:</h5>
+                    <ul class="booking-list">
+                      <li>{{user.owner}}</li>
+                      <li>{{user.email}}</li>
+                      <li>{{user.phone}}</li>
+                    </ul>
+                  </div>
+
+                  <a href="#small-dialog" class="rate-review popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i> Send Message</a>
+
+                </div>
+              </div>
+            </div>
+            <div class="buttons-to-right">
+              <a href="#" class="button gray reject"><i class="sl sl-icon-close"></i> Reject</a>
+              <a href="#" class="button gray approve"><i class="sl sl-icon-check"></i> Approve</a>
+            </div>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Copyrights -->
+    <div class="col-md-12">
+      <p> Copyright by <a href="https://crackall.net/">CrackAll</a>. All rights reserved.
+      </p></div>
+  </div>
+
+</div>
+  <!-- Content / End -->
+
+
+<script type="text/javascript" src="assets/scripts/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="assets/scripts/jquery-migrate-3.3.1.min.js"></script>
+<script type="text/javascript" src="assets/scripts/mmenu.min.js"></script>
+<script type="text/javascript" src="assets/scripts/chosen.min.js"></script>
+<script type="text/javascript" src="assets/scripts/slick.min.js"></script>
+<script type="text/javascript" src="assets/scripts/rangeslider.min.js"></script>
+<script type="text/javascript" src="assets/scripts/magnific-popup.min.js"></script>
+<script type="text/javascript" src="assets/scripts/waypoints.min.js"></script>
+<script type="text/javascript" src="assets/scripts/counterup.min.js"></script>
+<script type="text/javascript" src="assets/scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/scripts/tooltips.min.js"></script>
+<script type="text/javascript" src="assets/scripts/custom.js"></script>
+
+<!-- Date Range Picker - docs: http://www.daterangepicker.com/ -->
+<script src="assets/scripts/moment.min.js"></script>
+<script src="assets/scripts/daterangepicker.js"></script>
+
+<script>
+  $(function() {
+
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+      $('#booking-date-range span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+    cb(start, end);
+    $('#booking-date-range').daterangepicker({
+      "opens": "left",
+      "autoUpdateInput": false,
+      "alwaysShowCalendars": true,
+      startDate: start,
+      endDate: end,
+      ranges: {
+        'Today': [moment(), moment()],
+        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+        'This Month': [moment().startOf('month'), moment().endOf('month')],
+        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+      }
+    }, cb);
+
+    cb(start, end);
+
+  });
+
+  // Calendar animation and visual settings
+  $('#booking-date-range').on('show.daterangepicker', function(ev, picker) {
+    $('.daterangepicker').addClass('calendar-visible calendar-animated bordered-style');
+    $('.daterangepicker').removeClass('calendar-hidden');
+  });
+  $('#booking-date-range').on('hide.daterangepicker', function(ev, picker) {
+    $('.daterangepicker').removeClass('calendar-visible');
+    $('.daterangepicker').addClass('calendar-hidden');
+  });
+</script>
+

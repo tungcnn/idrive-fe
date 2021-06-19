@@ -1,0 +1,143 @@
+<app-dashboard-menu></app-dashboard-menu>
+<div class="dashboard-content">
+
+  <!-- Titlebar -->
+  <div id="titlebar">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Add Vehicle</h2>
+        <!-- Breadcrumbs -->
+        <nav id="breadcrumbs">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li>Add Vehicle</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <form #addVehicleForm="ngForm" (ngSubmit)="handleSubmit(addVehicleForm)">
+        <div id="add-listing">
+
+          <!-- Section -->
+          <div class="add-listing-section">
+
+            <!-- Headline -->
+            <div class="add-listing-headline">
+              <h3><i class="sl sl-icon-doc"></i> Basic Information</h3>
+            </div>
+
+            <!-- Title -->
+
+            <div class="row with-forms">
+              <div class="col-md-12">
+                <h5>License Plate <i class="tip" data-tip-content="License plate of your vehicle"></i></h5>
+                <input class="search-field" type="text" [(ngModel)]="vehicleForm.license" name="license"/>
+              </div>
+            </div>
+
+            <div class="row with-forms">
+              <div class="col-md-6">
+                <h5>Brand <i class="tip" data-tip-content="Brand of your vehicle"></i></h5>
+                <input class="search-field" type="text" [(ngModel)]="vehicleForm.brand" name="brand"/>
+              </div>
+              <div class="col-md-6">
+                <h5>Category</h5>
+                <select class="chosen-select-no-single" [(ngModel)]="vehicleForm.vehicleType" name="vehicleType">
+                  <option *ngFor="let vehicleType of vehicleTypes" [ngValue]="vehicleType">{{vehicleType.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row with-forms">
+              <div class="col-md-12">
+                <h5>Price <i class="tip" data-tip-content="Price of your vehicle"></i></h5>
+                <input class="search-field" type="number" [(ngModel)]="vehicleForm.price" name="price"/>
+              </div>
+            </div>
+            <!-- Row / End -->
+
+          </div>
+          <!-- Section / End -->
+
+          <!-- Section -->
+          <div class="add-listing-section margin-top-45">
+
+            <!-- Headline -->
+            <div class="add-listing-headline">
+              <h3><i class="sl sl-icon-location"></i> Location</h3>
+            </div>
+
+            <div class="submit-section">
+
+              <!-- Row -->
+              <div class="row with-forms">
+
+                <!-- City -->
+                <div class="col-md-6">
+                  <h5>City</h5>
+                  <select class="chosen-select-no-single" [(ngModel)]="vehicleForm.location" name="location">
+                    <option *ngFor="let location of locations" [ngValue]="location">{{location.name + ', ' + location.country}}</option>
+                  </select>
+                </div>
+
+              </div>
+              <!-- Row / End -->
+
+            </div>
+          </div>
+          <!-- Section / End -->
+
+
+          <!-- Section -->
+          <div class="add-listing-section margin-top-45">
+
+            <!-- Headline -->
+            <div class="add-listing-headline">
+              <h3><i class="sl sl-icon-picture"></i> Gallery</h3>
+            </div>
+
+            <!-- Dropzone -->
+            <div class="submit-section">
+              <form action="http://www.vasterad.com/file-upload" class="dropzone"></form>
+            </div>
+
+          </div>
+          <!-- Section / End -->
+
+
+          <!-- Section -->
+          <div class="add-listing-section margin-top-45">
+
+            <!-- Headline -->
+            <div class="add-listing-headline">
+              <h3><i class="sl sl-icon-docs"></i> Details</h3>
+            </div>
+
+            <!-- Description -->
+            <div class="form">
+              <h5>Description</h5>
+              <textarea class="WYSIWYG" name="description" cols="40" rows="3" id="summary" spellcheck="true" [(ngModel)]="vehicleForm.description"></textarea>
+            </div>
+
+          </div>
+          <!-- Section / End -->
+
+          <button type="submit" class="button preview">Submit <i class="fa fa-arrow-circle-right"></i></button>
+
+        </div>
+      </form>
+    </div>
+
+    <!-- Copyrights -->
+    <div class="col-md-12">
+      <p> Copyright by <a href="https://crackall.net/">CrackAll</a>. All rights reserved.
+    </div>
+
+  </div>
+
+</div>
