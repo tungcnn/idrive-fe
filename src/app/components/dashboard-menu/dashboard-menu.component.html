@@ -96,7 +96,7 @@
                   <li><a href="dashboard-my-listings.html">My Listings</a></li>
                   <li><a href="dashboard-reviews.html">Reviews</a></li>
                   <li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
-                  <li><a href="dashboard-add-listing.html">Add Listing</a></li>
+                  <li><a [routerLink]="['/add-vehicle']">Add Listing</a></li>
                   <li><a href="dashboard-my-profile.html">My Profile</a></li>
                   <li><a href="dashboard-invoice.html">Invoice</a></li>
                 </ul>
@@ -206,7 +206,7 @@
           </li>
           <li><a href="dashboard-reviews.html"><i class="sl sl-icon-star"></i> Reviews</a></li>
           <li><a href="dashboard-bookmarks.html"><i class="sl sl-icon-heart"></i> Bookmarks</a></li>
-          <li><a href="dashboard-add-listing.html"><i class="sl sl-icon-plus"></i> Add Listing</a></li>
+          <li><a href="javascript:;" [routerLink]="['/add-vehicle']"><i class="sl sl-icon-plus"></i> Add Listing</a></li>
         </ul>
 
         <ul data-submenu-title="Account">
