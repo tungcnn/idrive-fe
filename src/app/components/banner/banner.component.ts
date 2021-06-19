@@ -24,7 +24,7 @@ export class BannerComponent implements OnInit {
     this.getAllVehicleTypes();
   }
 
-  abc(locationId, vehicleTypeId) {
+  searchVehicles(locationId, vehicleTypeId) {
     this.router.navigate(['search-result'], {queryParams:{q: locationId, p: vehicleTypeId}});
   }
 
@@ -39,6 +39,5 @@ export class BannerComponent implements OnInit {
       this.vehicleTypeList = vehicleTypes;
     });
   }
-
 
 }
