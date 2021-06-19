@@ -12,11 +12,11 @@
       <!-- Titlebar -->
       <div id="titlebar" class="listing-titlebar">
         <div class="listing-titlebar-title">
-          <h2>Sunny and Modern Apartment<span class="listing-tag">Apartments</span></h2>
+          <h2>{{thisVehicle.brand}} / {{thisVehicle.owner}}<span class="listing-tag">{{thisVehicle.vehicleType.name}}</span></h2>
           <span>
 						<a href="#listing-location" class="listing-address">
 							<i class="fa fa-map-marker"></i>
-							2726 Shinn Street, New York
+							{{thisVehicle.location.name}}
 						</a>
 					</span>
           <div class="star-rating" data-rating="5">
@@ -41,15 +41,14 @@
 
         <!-- Apartment Description -->
         <ul class="apartment-details">
-          <li>2 rooms</li>
-          <li>1 bedroom</li>
-          <li>1 bed</li>
-          <li>1 bathroom</li>
+          <li>${{thisVehicle.price}}</li>
+          <li>{{thisVehicle.brand}}</li>
+          <li>{{thisVehicle.license}}</li>
         </ul>
 
         <!-- Description -->
         <p>
-          Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus.
+          {{thisVehicle.description}}
         </p>
 
         <p>

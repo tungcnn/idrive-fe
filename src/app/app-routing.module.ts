@@ -18,7 +18,7 @@ const routes: Routes = [
     component: SearchResultComponent
   },
   {
-    path: 'search-result/car-detail',
+    path: 'car-detail',
     component: DetailedInfoComponent
   },
   {

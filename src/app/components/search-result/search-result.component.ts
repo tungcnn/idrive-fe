@@ -13,7 +13,8 @@ export class SearchResultComponent implements OnInit {
   locationId = -1;
   vehicleTypeId = -1;
   constructor(private searchService: SearchService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
 
   }
 
@@ -23,6 +24,10 @@ export class SearchResultComponent implements OnInit {
       this.vehicleTypeId = params.p;
       this.searchVehicles(this.locationId, this.vehicleTypeId);
     })
+  }
+
+  passDetails(vehicleId) {
+    this.router.navigate(['car-detail'], {queryParams: {vehicleId: vehicleId}});
   }
 
   searchVehicles(locationId: number, typeId: number) {
