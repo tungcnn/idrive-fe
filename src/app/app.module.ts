@@ -28,10 +28,6 @@ import {HttpClientModule} from '@angular/common/http';
     DashboardMenuComponent,
     DashboardComponent,
     DashboardBookingsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
     AddVehicleComponent
   ],
     imports: [
