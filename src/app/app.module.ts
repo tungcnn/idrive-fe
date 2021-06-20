@@ -11,9 +11,7 @@ import { DetailedInfoComponent } from './components/detailed-info/detailed-info.
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { DashboardMenuComponent } from './components/dashboard-menu/dashboard-menu.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
-import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { DashboardBookingsComponent } from './components/dashboard/dashboard-bookings/dashboard-bookings.component';
 import {AngularFireModule} from '@angular/fire';
@@ -21,6 +19,9 @@ import {environment} from '../environments/environment';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicle.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicl
     DashboardMenuComponent,
     DashboardComponent,
     DashboardBookingsComponent,
-    AddVehicleComponent
+    AddVehicleComponent,
+    CheckoutComponent
   ],
     imports: [
         BrowserModule,
