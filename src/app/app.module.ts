@@ -17,6 +17,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicle.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
     DashboardMenuComponent,
     DashboardComponent,
     DashboardBookingsComponent,
-    AddVehicleComponent
+    AddVehicleComponent,
+    DetailComponent
   ],
     imports: [
         BrowserModule,
