@@ -144,106 +144,25 @@
 
 
       <!-- Right Side Content / End -->
-      <div class="right-side">
+      <div class="right-side" >
         <div class="header-widget">
-          <a [routerLink]="'sign-in'" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>
-          <a [routerLink]="'sign-up'" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-pencil"></i> Sign Up</a>
-          <a href="" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
+          <div *ngIf="!isLoggedIn">
+            <a [routerLink]="'sign-in'" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>
+            <a [routerLink]="'sign-up'" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-pencil"></i> Sign Up</a>
+            <a href="" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
+          </div>
+          <div *ngIf="isLoggedIn" class="user-menu">
+            <div [routerLink]="'dashboard'" class="user-name"><span><img src="https://1.bp.blogspot.com/-5Y8-Xr5ghnc/X-T53ekoe1I/AAAAAAAAMG4/OiDUMQPkPZcp3hQxNIR-nIvqS9OdV91hgCNcBGAsYHQ/s800/1.jpg" alt=""></span>Hi, {{user?.fullName}}!</div>
+          </div>
+
         </div>
       </div>
+
+      <!-- User Menu -->
+
+
       <!-- Right Side Content / End -->
 
-      <!-- Sign In Popup -->
-<!--      <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">-->
-
-<!--        <div class="small-dialog-header">-->
-<!--          <h3 style="color: black">Sign In</h3>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash;Tabs &ndash;&gt;-->
-<!--        <div class="sign-in-form style-1">-->
-
-<!--          <ul class="tabs-nav">-->
-<!--            <li class=""><a href="#tab1">Log In</a></li>-->
-<!--            <li><a href="#tab2">Register</a></li>-->
-<!--          </ul>-->
-
-<!--          <div class="tabs-container alt">-->
-
-<!--            &lt;!&ndash; Login &ndash;&gt;-->
-<!--            <div class="tab-content" id="tab1" style="display: none;">-->
-<!--              <form class="login" [formGroup]="loginForm" (ngSubmit)="login()">-->
-
-<!--                <p class="form-row form-row-wide">-->
-<!--                  <label for="username">Username:-->
-<!--                    <i class="im im-icon-Male"></i>-->
-<!--                    <input [formControlName]="'username'" required autofocus type="text" class="input-text" name="username" id="username" value="" />-->
-<!--                  </label>-->
-<!--                </p>-->
-
-<!--                <p class="form-row form-row-wide">-->
-<!--                  <label for="password">Password:-->
-<!--                    <i class="im im-icon-Lock-2"></i>-->
-<!--                    <input [formControlName]="'password'" required autofocus class="input-text" type="password" name="password" id="password"/>-->
-<!--                  </label>-->
-<!--                  <span class="lost_password">-->
-<!--										<a href="#" >Lost Your Password?</a>-->
-<!--									</span>-->
-<!--                </p>-->
-
-<!--                <div class="form-row">-->
-<!--                  <input type="submit" class="button border margin-top-5" name="login" value="Login" />-->
-<!--                  <div class="checkboxes margin-top-10">-->
-<!--                    <input id="remember-me" type="checkbox" name="check">-->
-<!--                    <label for="remember-me">Remember Me</label>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--              </form>-->
-<!--            </div>-->
-
-<!--            &lt;!&ndash; Register &ndash;&gt;-->
-<!--            <div class="tab-content" id="tab2" style="display: none;">-->
-
-<!--              <form method="post" class="register" [formGroup]="signupForm" (ngSubmit)="signup()">-->
-
-<!--                <p class="form-row form-row-wide">-->
-<!--                  <label for="username2">Username:-->
-<!--                    <i class="im im-icon-Male"></i>-->
-<!--                    <input [formControlName]="'username'" type="text" class="input-text" name="username" id="username2" value="" required autofocus/>-->
-<!--                  </label>-->
-<!--                </p>-->
-
-<!--                <p class="form-row form-row-wide">-->
-<!--                  <label for="email2">Email Address:-->
-<!--                    <i class="im im-icon-Mail"></i>-->
-<!--                    <input [formControlName]="'email'" type="text" class="input-text" name="email" id="email2" value="" required autofocus/>-->
-<!--                  </label>-->
-<!--                </p>-->
-
-<!--                <p class="form-row form-row-wide">-->
-<!--                  <label for="password1">Password:-->
-<!--                    <i class="im im-icon-Lock-2"></i>-->
-<!--                    <input [formControlName]="'password'" class="input-text" type="password" name="password1" id="password1" required autofocus/>-->
-<!--                  </label>-->
-<!--                </p>-->
-
-<!--                <p class="form-row form-row-wide">-->
-<!--                  <label for="password2">Full Name:-->
-<!--                    <i class="im im-icon-Male-2"></i>-->
-<!--                    <input [formControlName]="'fullName'" class="input-text" type="text" name="password2" id="password2" required autofocus/>-->
-<!--                  </label>-->
-<!--                </p>-->
-
-<!--                <input type="submit" class="button border fw margin-top-10" name="register" value="Register" />-->
-
-<!--              </form>-->
-<!--            </div>-->
-
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-      <!-- Sign In Popup / End -->
 
 <!--      Logged In-->
 
