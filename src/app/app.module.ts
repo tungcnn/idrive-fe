@@ -21,6 +21,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { VehicleListComponent } from './components/vehicle/vehicle-list/vehicle-list.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { BookingConfirmationComponent } from './components/booking-confirmation/booking-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     VehicleListComponent,
     DashboardBookingsComponent,
     AddVehicleComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    BookingConfirmationComponent
   ],
     imports: [
         BrowserModule,

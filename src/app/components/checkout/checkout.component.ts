@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Vehicle} from '../../model/vehicle';
 import {VehicleService} from '../../service/vehicle/vehicle.service';
 
@@ -15,7 +15,8 @@ export class CheckoutComponent implements OnInit {
   vehicleToCheckout: Vehicle = {};
 
   constructor(private activatedRoute: ActivatedRoute,
-              private vehicleService: VehicleService) { }
+              private vehicleService: VehicleService,
+              private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -23,6 +24,10 @@ export class CheckoutComponent implements OnInit {
       this.vehicleId = +params.vehicleId;
       this.getVehicleById(this.vehicleId);
     })
+  }
+
+  checkOut() {
+    this.router.navigate(['booking-confirmation']);
   }
 
   getVehicleById(id) {
