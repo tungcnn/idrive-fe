@@ -112,7 +112,7 @@
               <ng-container *ngFor="let image of images">
                 <div style="width: 100px; float: left; margin-right: 20px">
                   <img style="width: 100px; height: 100px;" [src]="image.imgUrl"><br>
-                  <button class="btn add-slot-btn" (click)="deleteConfirm(image.id)">Delete</button>
+                  <i class="sl sl-icon-close" (click)="deleteConfirm(image.id)"></i>
                 </div>
               </ng-container>
 

@@ -182,8 +182,6 @@ export class UpdateVehicleComponent implements OnInit {
     })
   }
 
-
-
   async handleSubmit(addVehicleForm: NgForm) {
     let timerInterval;
     Swal.fire({
