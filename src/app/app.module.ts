@@ -22,7 +22,8 @@ import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicl
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-
+import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     DashboardComponent,
     DashboardBookingsComponent,
     AddVehicleComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    SigninComponent,
+    SignupComponent
   ],
     imports: [
         BrowserModule,
