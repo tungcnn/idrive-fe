@@ -21,6 +21,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicle.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { VehicleListComponent } from './components/vehicle/vehicle-list/vehicle-list.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -35,6 +36,8 @@ import { SignupComponent } from './components/signup/signup.component';
     SearchResultComponent,
     DashboardMenuComponent,
     DashboardComponent,
+    AddVehicleComponent,
+    VehicleListComponent,
     DashboardBookingsComponent,
     AddVehicleComponent,
     CheckoutComponent,
