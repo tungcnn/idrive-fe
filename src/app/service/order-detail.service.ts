@@ -11,7 +11,15 @@ export class OrderDetailService {
 
   constructor(private http:HttpClient) { }
 
-  findByVehicle(id:number):Observable<OrderDetail>{
-    return this.http.get<OrderDetail>(`${API_URL}/OrderfindByVehicle/${id}`)
+  findByDate(Date:any):Observable<OrderDetail[]>{
+    return this.http.post<OrderDetail[]>(`${API_URL}/Order/findByDate`,Date)
+  }
+
+  History(id:number):Observable<OrderDetail[]>{
+    return this.http.get<OrderDetail[]>(`${API_URL}/Order/${id}`)
+  }
+
+  save(orderDetail: OrderDetail): Observable<OrderDetail> {
+    return this.http.post<OrderDetail>(`${API_URL}/Order`, orderDetail);
   }
 }
