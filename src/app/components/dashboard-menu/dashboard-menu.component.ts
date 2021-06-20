@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-menu',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routerLink:Router) { }
 
   ngOnInit() {
   }
 
+  router() {
+    this.routerLink.navigate(['/dashboard_bookings'],{queryParams:{q:1}});
+  }
 }

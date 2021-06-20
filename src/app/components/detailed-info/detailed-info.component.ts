@@ -37,7 +37,9 @@ export class DetailedInfoComponent implements OnInit {
   }
 
   checkOut(vehicleId) {
+    // @ts-ignore
     var startDate = new Date(document.getElementById("startDate").value);
+    // @ts-ignore
     var endDate = new Date(document.getElementById("endDate").value);
     var rentDate = (endDate.getTime() - startDate.getTime()) / (1000*3600*24);
     this.router.navigate(['checkout'], {queryParams: {totalDate: rentDate, vehicleId: vehicleId}});
