@@ -12,6 +12,8 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 import {finalize} from 'rxjs/operators';
 import {NgForm} from '@angular/forms';
 import {AngularFireStorage} from '@angular/fire/storage';
+import {AuthService} from '../../../service/auth.service';
+import {UserService} from '../../../service/user.service';
 
 @Component({
   selector: 'app-update-vehicle',
@@ -25,7 +27,9 @@ export class UpdateVehicleComponent implements OnInit {
   locations: Location[] = [];
   images: Image[] = [];
   files: File[] = [];
-  currentUserId: number = 1;
+  currentUserId: number;
+  isLoggedIn: boolean;
+  username: string;
 
   @ViewChild('imageInput', {static: false})
   myFileInput: ElementRef;
@@ -35,7 +39,12 @@ export class UpdateVehicleComponent implements OnInit {
               private vehicleTypeService: VehicleTypeService,
               private locationService: LocationService,
               private imageService: ImageService,
-              private storage: AngularFireStorage) {
+              private storage: AngularFireStorage,
+              private authService: AuthService,
+              private userService: UserService) {
+    this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
+    this.authService.username.subscribe((data: string) => this.username = data);
+    this.authService.userId.subscribe((data: number) => this.currentUserId = data);
     this.activeRoute.paramMap.subscribe(paramMap=>{
       this.vehicleId = +paramMap.get("id");
     })
@@ -54,6 +63,11 @@ export class UpdateVehicleComponent implements OnInit {
       this.locations = locations
     })
     this.getAllImage();
+    this.username = this.authService.getUserName();
+    this.currentUserId = this.authService.getUserId();
+    if (this.username != null){
+      this.isLoggedIn = true;
+    }
   }
 
   getAllImage() {

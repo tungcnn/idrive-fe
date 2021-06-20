@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Vehicle} from '../../model/vehicle';
 import {SearchService} from '../../service/search-car/search.service';
 import {ActivatedRoute, Router} from '@angular/router';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-search-result',
   templateUrl: './search-result.component.html',
@@ -32,7 +32,11 @@ export class SearchResultComponent implements OnInit {
 
   searchVehicles(locationId: number, typeId: number) {
     if (locationId == 0 && typeId == 0) {
-      alert("Deo co gi");
+      Swal.fire(
+        'Empty',
+        'You did not choose any filter',
+        'error'
+      )
       return;
     }
     if (locationId == 0) {

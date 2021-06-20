@@ -1,10 +1,11 @@
+<app-header></app-header>
 <link rel="stylesheet" href="../../../assets/css/main-color.css" id="colors">
 <link rel="stylesheet" href="../../../assets/css/style.css">
 <div class="single-listing-page-titlebar"></div>
 
 <div class="listing-slider mfp-gallery-container margin-bottom-0">
-  <img [src]="thisVehicle.cover" class="item mfp-gallery" alt="">
-  <img [src]="thisVehicle.cover" class="item mfp-gallery" alt="">
+  <img [src]="thisVehicle.cover" class="item mfp-gallery" alt="" style="margin-left: 30%">
+<!--  <img [src]="thisVehicle.cover" class="item mfp-gallery" alt="">-->
 </div>
 <!-- Content
 ================================================== -->
@@ -389,7 +390,8 @@
         </div>
 
         <!-- Book Now -->
-        <a (click)="checkOut(thisVehicle.id)" class="button book-now fullwidth margin-top-5">Request To Book</a>
+        <a *ngIf="currentUserId" (click)="checkOut(thisVehicle.id)" class="button book-now fullwidth margin-top-5">Request To Book</a>
+        <a *ngIf="!currentUserId" [routerLink]="['/sign-in']" class="button book-now fullwidth margin-top-5">Request To Book</a>
 
         <!-- Estimated Cost -->
         <!-- 				<div class="booking-estimated-cost">
@@ -402,7 +404,7 @@
       <!-- Contact -->
       <div class="boxed-widget margin-top-35">
         <div class="hosted-by-title">
-          <h4><span>Hosted by</span> <a href="pages-user-profile.html">Tom Perrin</a></h4>
+          <h4><span>Hosted by</span> <a href="pages-user-profile.html">{{thisVehicle.owner.fullName}}</a></h4>
           <a href="pages-user-profile.html" class="hosted-by-avatar"><img src="images/dashboard-avatar.jpg" alt=""></a>
         </div>
         <ul class="listing-details-sidebar">

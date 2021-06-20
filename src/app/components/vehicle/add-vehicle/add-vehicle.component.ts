@@ -11,6 +11,8 @@ import {Image} from '../../../model/image';
 import {ImageService} from '../../../service/image/image.service';
 import {Location} from '../../../model/location';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import {AuthService} from '../../../service/auth.service';
+import {UserService} from '../../../service/user.service';
 
 @Component({
   selector: 'app-add-vehicle',
@@ -22,7 +24,9 @@ export class AddVehicleComponent implements OnInit {
   locations: Location[] = [];
   vehicleForm: Vehicle = {};
   files: File[] = [];
-  currentUserId: number = 1;
+  currentUserId: number;
+  isLoggedIn: boolean;
+  username: string;
 
   @ViewChild('imageInput', {static: false})
   myFileInput: ElementRef;
@@ -31,7 +35,13 @@ export class AddVehicleComponent implements OnInit {
               private locationService: LocationService,
               private vehicleService: VehicleService,
               private storage: AngularFireStorage,
-              private imageService: ImageService) { }
+              private imageService: ImageService,
+              private authService: AuthService,
+              private userService: UserService) {
+    this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
+    this.authService.username.subscribe((data: string) => this.username = data);
+    this.authService.userId.subscribe((data: number) => this.currentUserId = data);
+  }
 
   ngOnInit() {
     this.vehicleTypeService.getAll().subscribe(vehicleTypes => {
@@ -41,6 +51,11 @@ export class AddVehicleComponent implements OnInit {
       // @ts-ignore
       this.locations = locations
     })
+    this.username = this.authService.getUserName();
+    this.currentUserId = this.authService.getUserId();
+    if (this.username != null){
+      this.isLoggedIn = true;
+    }
   }
 
   public onFileSelected(event) {
@@ -114,6 +129,7 @@ export class AddVehicleComponent implements OnInit {
         'success',
         'success'
       )
+      this.myFileInput.nativeElement.value = '';
     })
   }
 

@@ -37,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: VehicleListComponent
   },
   {
     path: 'dashboard_bookings',
