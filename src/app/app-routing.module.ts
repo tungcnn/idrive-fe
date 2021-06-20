@@ -10,6 +10,7 @@ import {VehicleListComponent} from './components/vehicle/vehicle-list/vehicle-li
 import {CheckoutComponent} from './components/checkout/checkout.component';
 import {SigninComponent} from "./components/signin/signin.component";
 import {SignupComponent} from "./components/signup/signup.component";
+import {BookingConfirmationComponent} from './components/booking-confirmation/booking-confirmation.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,10 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent
+  },
+  {
+    path: 'booking-confirmation',
+    component: BookingConfirmationComponent
   }
 ];
 
