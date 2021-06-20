@@ -6,6 +6,7 @@ import {DetailedInfoComponent} from './components/detailed-info/detailed-info.co
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {DashboardBookingsComponent} from './components/dashboard/dashboard-bookings/dashboard-bookings.component';
 import {AddVehicleComponent} from './components/vehicle/add-vehicle/add-vehicle.component';
+import {VehicleListComponent} from './components/vehicle/vehicle-list/vehicle-list.component';
 import {CheckoutComponent} from './components/checkout/checkout.component';
 
 
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'add-vehicle',
     component: AddVehicleComponent
+  },
+  {
+    path: 'listings',
+    component: VehicleListComponent
   },
   {
     path: 'checkout',

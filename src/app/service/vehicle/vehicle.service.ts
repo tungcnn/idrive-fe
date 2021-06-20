@@ -39,4 +39,8 @@ export class VehicleService {
   public getByVehicleType(id: number): Observable<Vehicle> {
     return this.http.get<Vehicle>(`${apiUrl}/vehicles/findByVehicleType/${id}`);
   }
+
+  public getAllByUser(id: number, pageNo: number): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(`${apiUrl}/vehicles/owner/${id}/${pageNo}`);
+  }
 }
