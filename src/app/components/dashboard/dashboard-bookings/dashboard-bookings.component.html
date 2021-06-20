@@ -41,7 +41,7 @@
                 <option>Hotel Govendor</option>
               </select>
               <div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%;" title="">
-             <span><input type="text" style="height:34px" placeholder="VehicleType" (change)="searchByVehicle(this)"></span>
+
                 <ul class="chosen-results">
                 </ul></div>
             </div>
@@ -49,7 +49,7 @@
 
           <!-- Date Range -->
           <div id="booking-date-range">
-           <input type="date" style="height: 34px" (change)="searchByDate(this)">
+           <input type="date" style="height: 34px" (change)="searchByDate(q.value)" #q>
           </div>
         </div>
 

@@ -2,7 +2,10 @@
 <link rel="stylesheet" href="../../../assets/css/style.css">
 <div class="single-listing-page-titlebar"></div>
 
-
+<div class="listing-slider mfp-gallery-container margin-bottom-0">
+  <img [src]="thisVehicle.cover" class="item mfp-gallery" alt="">
+  <img [src]="thisVehicle.cover" class="item mfp-gallery" alt="">
+</div>
 <!-- Content
 ================================================== -->
 <div class="container">
@@ -12,7 +15,7 @@
       <!-- Titlebar -->
       <div id="titlebar" class="listing-titlebar">
         <div class="listing-titlebar-title">
-          <h2>{{thisVehicle.brand}} / {{thisVehicle.owner}}<span class="listing-tag">{{thisVehicle.vehicleType.name}}</span></h2>
+          <h2>{{thisVehicle.brand}} / {{thisVehicle.license}}<span class="listing-tag">{{thisVehicle.vehicleType.name}}</span></h2>
           <span>
 						<a href="#listing-location" class="listing-address">
 							<i class="fa fa-map-marker"></i>
@@ -23,16 +26,6 @@
             <div class="rating-counter"><a href="#listing-reviews">(31 reviews)</a></div>
           </div>
         </div>
-      </div>
-
-      <!-- Listing Nav -->
-      <div id="listing-nav" class="listing-nav-container">
-        <ul class="listing-nav">
-          <li><a href="#listing-overview" class="active">Overview</a></li>
-          <li><a href="#listing-gallery">Gallery</a></li>
-          <li><a href="#listing-reviews">Reviews</a></li>
-          <li><a href="#add-review">Add Review</a></li>
-        </ul>
       </div>
 
       <!-- Overview -->
