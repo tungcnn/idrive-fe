@@ -15,6 +15,8 @@ export class CheckoutComponent implements OnInit {
   lengthOfRental: number = -1;
   vehicleId: number = -1;
   vehicleToCheckout: Vehicle = {};
+  startDate;
+  endDate;
 
   constructor(private activatedRoute: ActivatedRoute,
               private vehicleService: VehicleService,
@@ -26,6 +28,8 @@ export class CheckoutComponent implements OnInit {
       this.lengthOfRental = +params.totalDate;
       this.vehicleId = +params.vehicleId;
       this.getVehicleById(this.vehicleId);
+      this.startDate = params.startDate;
+      this.endDate = params.endDate;
     })
   }
 
@@ -44,6 +48,9 @@ export class CheckoutComponent implements OnInit {
     this.vehicleService.findById(this.vehicleId).subscribe(v => {
       this.vehicleToCheckout = v;
       orderDetail.vehicle = this.vehicleToCheckout;
+      orderDetail.totalPrice = this.lengthOfRental * this.vehicleToCheckout.price;
+      orderDetail.startTime = this.startDate;
+      orderDetail.endTime = this.endDate;
       orderDetail.own = this.vehicleToCheckout.owner;
       orderDetail.renter.userId = 1;
       this.orderDetailService.save(orderDetail);
