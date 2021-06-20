@@ -270,14 +270,14 @@
         <div *ngFor="let result of listResults" class="col-lg-4 col-md-6">
           <a (click)="passDetails(result.id)" class="listing-item-container compact">
             <div class="listing-item">
-              <img src="images/listing-item-01.jpg" alt="">
+              <img [src]="result.cover" alt="">
 
               <div class="listing-badge now-open">Now Open</div>
 
               <div class="listing-item-content">
                 <div class="numerical-rating" data-rating="3.5"></div>
                 <h3>{{result.description}} <i class="verified-icon"></i></h3>
-                <span>{{result.location}}</span>
+                <span>{{result.location.name}}</span>
               </div>
               <span class="like-icon"></span>
             </div>
