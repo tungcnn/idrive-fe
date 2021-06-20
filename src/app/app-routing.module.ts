@@ -8,6 +8,7 @@ import {DashboardBookingsComponent} from './components/dashboard/dashboard-booki
 import {AddVehicleComponent} from './components/vehicle/add-vehicle/add-vehicle.component';
 import {VehicleListComponent} from './components/vehicle/vehicle-list/vehicle-list.component';
 import {CheckoutComponent} from './components/checkout/checkout.component';
+import {UpdateVehicleComponent} from './components/vehicle/update-vehicle/update-vehicle.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent
+  },
+  {
+    path: 'edit-listing/:id',
+    component: UpdateVehicleComponent
   }
 ];
 
