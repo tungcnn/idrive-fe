@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Vehicle} from '../../model/vehicle';
 import {VehicleService} from '../../service/vehicle/vehicle.service';
+import {OrderDetailService} from '../../service/order-detail.service';
+import {OrderDetail} from '../../model/order-detail';
 
 @Component({
   selector: 'app-checkout',
@@ -16,7 +18,8 @@ export class CheckoutComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
               private vehicleService: VehicleService,
-              private router: Router) { }
+              private router: Router,
+              private orderDetailService: OrderDetailService) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -33,8 +36,19 @@ export class CheckoutComponent implements OnInit {
   getVehicleById(id) {
     this.vehicleService.findById(this.vehicleId).subscribe(v => {
       this.vehicleToCheckout = v;
-      console.log(this.vehicleToCheckout);
     })
   }
+
+  async saveOrderDetails() {
+    let orderDetail: OrderDetail = {};
+    this.vehicleService.findById(this.vehicleId).subscribe(v => {
+      this.vehicleToCheckout = v;
+      orderDetail.vehicle = this.vehicleToCheckout;
+      orderDetail.own = this.vehicleToCheckout.owner;
+      orderDetail.renter.userId = 1;
+      this.orderDetailService.save(orderDetail);
+    })
+  }
+
 
 }
