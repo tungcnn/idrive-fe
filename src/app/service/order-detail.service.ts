@@ -14,4 +14,8 @@ export class OrderDetailService {
   findByDate(Date:any):Observable<OrderDetail>{
     return this.http.post<OrderDetail>(`${API_URL}/Order/findByDate`,Date)
   }
+
+  save(orderDetail: OrderDetail): Observable<OrderDetail> {
+    return this.http.post<OrderDetail>(`${API_URL}/Order`, orderDetail);
+  }
 }
