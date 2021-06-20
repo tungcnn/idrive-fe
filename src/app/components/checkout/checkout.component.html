@@ -1,3 +1,15 @@
+<script src="../../../assets/scripts/tooltips.min.js"></script>
+<script src="../../../assets/scripts/custom.js"></script>
+<script src="../../../assets/scripts/jquery-ui.min.js"></script>
+<script src="../../../assets/scripts/counterup.min.js"></script>
+<script src="../../../assets/scripts/waypoints.min.js"></script>
+<script src="../../../assets/scripts/magnific-popup.min.js"></script>
+<script src="../../../assets/scripts/rangeslider.min.js"></script>
+<script src="../../../assets/scripts/slick.min.js"></script>
+<script src="../../../assets/scripts/chosen.min.js"></script>
+<script src="../../../assets/scripts/mmenu.min.js"></script>
+<script src="../../../assets/scripts/jquery-migrate-3.3.1.min.js"></script>
+<script src="../../../assets/scripts/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="../../../assets/css/main-color.css" id="colors">
 <link rel="stylesheet" href="../../../assets/css/style.css">
 <div id="titlebar">
@@ -74,7 +86,7 @@
           <div class="payment-tab-trigger">
             <input checked id="paypal" name="cardType" type="radio" value="paypal">
             <label for="paypal">PayPal</label>
-            <img class="payment-logo paypal" src="../../../i.imgur.com/ApBxkXU.png" alt="">
+            <img class="payment-logo paypal" src="assets/images/ApBxkXU.png" alt="">
           </div>
 
           <div class="payment-tab-content">
@@ -87,7 +99,7 @@
           <div class="payment-tab-trigger">
             <input type="radio" name="cardType" id="creditCart" value="creditCard">
             <label for="creditCart">Credit / Debit Card</label>
-            <img class="payment-logo" src="../../../i.imgur.com/IHEKLgm.png" alt="">
+            <img class="payment-logo" src="assets/images/IHEKLgm.png" alt="">
           </div>
 
           <div class="payment-tab-content">
@@ -151,7 +163,7 @@
           <div class="listing-item-content">
             <div class="numerical-rating" data-rating="5.0"></div>
             <h3>{{vehicleToCheckout.description}}</h3>
-            <span>{{vehicleToCheckout.location}}</span>
+            <span>{{vehicleToCheckout.location.name}}</span>
           </div>
         </div>
       </div>

@@ -385,13 +385,13 @@
           <!-- Date Range Picker - docs: http://www.daterangepicker.com/ -->
           <div class="col-lg-12">
             <label for="startDate">Start Date</label>
-            <input type="date" id="startDate" [min]="minDateStr" placeholder="Start Date">
+            <input type="date" id="startDate" [(ngModel)]="minDate" [min]="minDateStr" placeholder="Start Date">
           </div>
 
           <!-- Panel Dropdown -->
           <div class="col-lg-12">
             <label for="endDate">End Date</label>
-            <input type="date" id="endDate" [min]="minEndDateStr" placeholder="End Date">
+            <input type="date" id="endDate" [min]="tomorrowDateStr" placeholder="End Date">
           </div>
         </div>
 
