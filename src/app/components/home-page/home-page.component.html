@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <app-header></app-header>
 <app-banner></app-banner>
 <!-- Content
@@ -76,125 +77,55 @@
       </div>
     </div>
   </div>
+  <div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" *ngFor="let vehicle of listVehicle">
+        <div class="carousel-item active">
+          <img [src]="vehicle.cover" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{vehicle.brand}}</h5>
+            <p>{{vehicle.location.name}}, {{vehicle.location.country}}</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
 
   <!-- Carousel / Start -->
-  <div class="simple-fw-slick-carousel dots-nav">
+<!--  <div class="simple-fw-slick-carousel dots-nav">-->
+<!--    <div>-->
+<!--      <a class="listing-item-container compact" *ngFor="let vehicles of listVehicle">-->
+<!--        <div class="listing-item">-->
+<!--          <img [src]="vehicles.cover" alt="">-->
 
-    <!-- Listing Item -->
-    <div class="fw-carousel-item">
-      <a href="listings-single-page.html" class="listing-item-container compact">
-        <div class="listing-item">
-          <img src="assets/images/listing-item-01.jpg" alt="">
+<!--          <div class="listing-item-content">-->
+<!--            <div class="numerical-rating" data-rating="3.5"></div>-->
+<!--            <h3>{{vehicles.brand}} -+</h3>-->
+<!--            <span>{{vehicles.location.name}}</span>-->
+<!--          </div>-->
+<!--          <span class="like-icon"></span>-->
+<!--        </div>-->
+<!--      </a>-->
+<!--    </div>-->
 
-          <div class="listing-badge now-open">AVAILABLE</div>
-
-          <div class="listing-item-content">
-            <div class="numerical-rating" data-rating="3.5"></div>
-            <h3>White Peugeot</h3>
-            <span>60 Hai Ba Trung street, Hanoi</span>
-          </div>
-          <span class="like-icon"></span>
-        </div>
-      </a>
-    </div>
     <!-- Listing Item / End -->
 
-    <!-- Listing Item -->
-    <div class="fw-carousel-item">
-      <a href="listings-single-page.html" class="listing-item-container compact">
-        <div class="listing-item">
-          <img src="assets/images/listing-item-02.jpg" alt="">
-          <div class="listing-badge now-open">EXCLUSIVE</div>
-          <div class="listing-item-content">
-            <div class="numerical-rating" data-rating="5.0"></div>
-            <h3>Tower</h3>
-            <span>123 Bach Dang street, Hanoi</span>
-          </div>
-          <span class="like-icon"></span>
-        </div>
-      </a>
-    </div>
-    <!-- Listing Item / End -->
 
-    <!-- Listing Item -->
-    <div class="fw-carousel-item">
-      <a href="listings-single-page.html" class="listing-item-container compact">
-        <div class="listing-item">
-          <img src="assets/images/listing-item-03.jpg" alt="">
-          <div class="listing-item-details">
-            <ul>
-              <li>Starting from $5 per day</li>
-            </ul>
-          </div>
-          <div class="listing-item-content">
-            <div class="numerical-rating" data-rating="2.0"></div>
-            <h3>X-Game</h3>
-            <span>86 Lang Ha street, Hanoi</span>
-          </div>
-          <span class="like-icon"></span>
-        </div>
-      </a>
-    </div>
-    <!-- Listing Item / End -->
 
-    <!-- Listing Item -->
-    <div class="fw-carousel-item">
-      <a href="listings-single-page.html" class="listing-item-container compact">
-        <div class="listing-item">
-          <img src="assets/images/listing-item-04.jpg" alt="">
-
-          <div class="listing-badge now-open">AVAILABLE</div>
-
-          <div class="listing-item-content">
-            <div class="numerical-rating" data-rating="5.0"></div>
-            <h3>Black White Tower</h3>
-            <span>87 Ba Trieu Street, Hanoi</span>
-          </div>
-          <span class="like-icon"></span>
-        </div>
-      </a>
-    </div>
-    <!-- Listing Item / End -->
-
-    <!-- Listing Item -->
-    <div class="fw-carousel-item">
-      <a href="listings-single-page.html" class="listing-item-container compact">
-        <div class="listing-item">
-          <img src="assets/images/listing-item-05.jpg" alt="">
-          <div class="listing-item-content">
-            <div class="numerical-rating" data-rating="3.5"></div>
-            <h3>SMAFO</h3>
-            <span>99 Hue Street, Hanoi</span>
-          </div>
-          <span class="like-icon"></span>
-        </div>
-      </a>
-    </div>
-    <!-- Listing Item / End -->
-
-    <!-- Listing Item -->
-    <div class="fw-carousel-item">
-      <a href="listings-single-page.html" class="listing-item-container compact">
-        <div class="listing-item">
-          <img src="assets/images/listing-item-06.jpg" alt="">
-
-          <div class="listing-badge now-closed">NOT AVAILABLE</div>
-
-          <div class="listing-item-content">
-            <div class="numerical-rating" data-rating="4.5"></div>
-            <h3>Next Bike</h3>
-            <span>23 Phan Dinh Phung, Hanoi</span>
-          </div>
-          <span class="like-icon"></span>
-        </div>
-      </a>
-    </div>
-    <!-- Listing Item / End -->
-
-  </div>
   <!-- Carousel / End -->
-
-
 </section>
 <!-- Fullwidth Section / End -->
 <app-footer></app-footer>

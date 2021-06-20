@@ -21,7 +21,8 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { VehicleListComponent } from './components/vehicle/vehicle-list/vehicle-list.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { DetailComponent } from './components/detail/detail.component';
+import { VehicleDetailComponent } from './components/vehicle-detail/vehicle-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -38,10 +39,10 @@ import { DetailComponent } from './components/detail/detail.component';
     VehicleListComponent,
     DashboardBookingsComponent,
     AddVehicleComponent,
-    DetailComponent,
     AddVehicleComponent,
-    CheckoutComponent
-  ],
+    CheckoutComponent,
+    VehicleDetailComponent,
+      ],
     imports: [
         BrowserModule,
         AppRoutingModule,
