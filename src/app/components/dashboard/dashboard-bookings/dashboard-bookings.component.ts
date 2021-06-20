@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {LocationService} from '../../../service/location/location.service';
+import {VehicleService} from '../../../service/vehicle/vehicle.service';
+import {Vehicle} from '../../../model/vehicle';
+import {OrderDetailService} from '../../../service/order-detail.service';
 
 @Component({
   selector: 'app-dashboard-bookings',
@@ -7,6 +11,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./dashboard-bookings.component.css']
 })
 export class DashboardBookingsComponent implements OnInit {
+
 
  users = [
    {
@@ -41,7 +46,7 @@ export class DashboardBookingsComponent implements OnInit {
    }
   ];
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute , private order:OrderDetailService) {
   }
 
   ngOnInit() {
@@ -53,11 +58,11 @@ export class DashboardBookingsComponent implements OnInit {
     });
   }
 
-  searchByVehicle(Vehicle) {
-    Vehicle.value
+
+  searchByDate(date) {
+    this.order.findByDate(date).subscribe(data =>{
+      console.log(data)
+    });
   }
 
-  searchByDate(Date) {
-    Date.value
-  }
 }

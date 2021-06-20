@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard_bookings',
-    component: DashboardBookingsComponent
+    component: DashboardBookingsComponent,
   },
   {
     path: 'add-vehicle',
