@@ -4,6 +4,7 @@ import {LocationService} from '../../../service/location/location.service';
 import {VehicleService} from '../../../service/vehicle/vehicle.service';
 import {Vehicle} from '../../../model/vehicle';
 import {OrderDetailService} from '../../../service/order-detail.service';
+import {OrderDetail} from '../../../model/order-detail';
 
 @Component({
   selector: 'app-dashboard-bookings',
@@ -12,41 +13,13 @@ import {OrderDetailService} from '../../../service/order-detail.service';
 })
 export class DashboardBookingsComponent implements OnInit {
 
-
- users = [
-   {
-    renter: 'abc',
-    vehicleType:'Car',
-    startTime: '28/00/00',
-    endTime:'29/00/00',
-    price:'123',
-    owner:'abc',
-    phone:'0987654',
-    email:'hda@gmail.com'
-  },
-   {
-     renter: 'abc',
-     vehicleType:'Car',
-     startTime: '28/00/00',
-     endTime:'29/00/00',
-     price:'123',
-     owner:'abc',
-     phone:'0987654',
-     email:'hda@gmail.com'
-   },
-   {
-     renter: 'abc',
-     vehicleType:'Car',
-     startTime: '28/00/00',
-     endTime:'29/00/00',
-     price:'123',
-     owner:'abc',
-     phone:'0987654',
-     email:'hda@gmail.com'
-   }
-  ];
+  orderDetail:OrderDetail[] = [];
 
   constructor(private activatedRoute: ActivatedRoute , private order:OrderDetailService) {
+        this.order.History(2).subscribe(data=>{
+          this.orderDetail = data
+          console.log(data)
+        })
   }
 
   ngOnInit() {
@@ -61,7 +34,7 @@ export class DashboardBookingsComponent implements OnInit {
 
   searchByDate(date) {
     this.order.findByDate(date).subscribe(data =>{
-      console.log(data)
+     this.orderDetail = data
     });
   }
 

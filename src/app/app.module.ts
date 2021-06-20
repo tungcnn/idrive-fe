@@ -23,9 +23,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { VehicleListComponent } from './components/vehicle/vehicle-list/vehicle-list.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { VehicleDetailComponent } from './components/vehicle-detail/vehicle-detail.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { BookingConfirmationComponent } from './components/booking-confirmation/booking-confirmation.component';
+import { UpdateVehicleComponent } from './components/vehicle/update-vehicle/update-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +44,17 @@ import { BookingConfirmationComponent } from './components/booking-confirmation/
     VehicleListComponent,
     DashboardBookingsComponent,
     AddVehicleComponent,
+    AddVehicleComponent,
+    CheckoutComponent,
+    VehicleDetailComponent,
+    CheckoutComponent,
+    UpdateVehicleComponent,
     CheckoutComponent,
     SigninComponent,
     SignupComponent,
     BookingConfirmationComponent
-  ],
+  
+
     imports: [
         BrowserModule,
         AppRoutingModule,

@@ -43,17 +43,21 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  async saveOrderDetails() {
+  saveOrderDetails() {
     let orderDetail: OrderDetail = {};
     this.vehicleService.findById(this.vehicleId).subscribe(v => {
       this.vehicleToCheckout = v;
       orderDetail.vehicle = this.vehicleToCheckout;
       orderDetail.totalPrice = this.lengthOfRental * this.vehicleToCheckout.price;
-      orderDetail.startTime = this.startDate;
-      orderDetail.endTime = this.endDate;
+      orderDetail.startTime = new Date(this.startDate);
+      orderDetail.endTime = new Date(this.endDate);
       orderDetail.own = this.vehicleToCheckout.owner;
-      orderDetail.renter.userId = 1;
-      this.orderDetailService.save(orderDetail);
+      orderDetail.renter = {
+        userId: 2
+      };
+      this.orderDetailService.save(orderDetail).subscribe(() => {
+        console.log("Saved");
+      });
     })
   }
 
