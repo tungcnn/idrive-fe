@@ -147,7 +147,7 @@
       </div>
       <!-- Payment Methods Accordion / End -->
 
-      <a href="pages-booking-confirmation.html" class="button booking-confirmation-btn margin-top-40 margin-bottom-65">Confirm and Pay</a>
+      <a (click)="checkOut(); saveOrderDetails()" class="button booking-confirmation-btn margin-top-40 margin-bottom-65">Confirm and Pay</a>
     </div>
 
 
@@ -158,7 +158,7 @@
       <!-- Booking Summary -->
       <div class="listing-item-container compact order-summary-widget">
         <div class="listing-item">
-          <img src="images/listing-item-04.jpg" alt="">
+          <img [src]="vehicleToCheckout.cover" alt="">
 
           <div class="listing-item-content">
             <div class="numerical-rating" data-rating="5.0"></div>

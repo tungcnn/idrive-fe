@@ -18,4 +18,8 @@ export class OrderDetailService {
   History(id:number):Observable<OrderDetail[]>{
     return this.http.get<OrderDetail[]>(`${API_URL}/Order/${id}`)
   }
+
+  save(orderDetail: OrderDetail): Observable<OrderDetail> {
+    return this.http.post<OrderDetail>(`${API_URL}/Order`, orderDetail);
+  }
 }

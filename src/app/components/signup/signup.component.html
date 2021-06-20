@@ -1,0 +1,57 @@
+<!-- Sign In Popup -->
+<div id="sign-in-dialog" class="zoom-anim-dialog">
+
+  <div class="small-dialog-header">
+    <h3 style="color: black">Sign Up</h3>
+  </div>
+
+  <!--Tabs -->
+  <div class="sign-in-form style-1">
+
+    <ul class="tabs-nav">
+    </ul>
+
+    <div class="tabs-container alt">
+
+      <!-- Register -->
+      <div class="tab-content" id="tab2">
+
+        <form method="post" class="register" [formGroup]="signupForm" (ngSubmit)="signup()">
+
+          <p class="form-row form-row-wide">
+            <label for="username2">Username:
+              <i class="im im-icon-Male"></i>
+              <input [formControlName]="'username'" type="text" class="input-text" name="username" id="username2" value="" required autofocus/>
+            </label>
+          </p>
+
+          <p class="form-row form-row-wide">
+            <label for="email2">Email Address:
+              <i class="im im-icon-Mail"></i>
+              <input [formControlName]="'email'" type="text" class="input-text" name="email" id="email2" value="" required autofocus/>
+            </label>
+          </p>
+
+          <p class="form-row form-row-wide">
+            <label for="password1">Password:
+              <i class="im im-icon-Lock-2"></i>
+              <input [formControlName]="'password'" class="input-text" type="password" name="password1" id="password1" required autofocus/>
+            </label>
+          </p>
+
+          <p class="form-row form-row-wide">
+            <label for="password2">Full Name:
+              <i class="im im-icon-Male-2"></i>
+              <input [formControlName]="'fullName'" class="input-text" type="text" name="password2" id="password2" required autofocus/>
+            </label>
+          </p>
+
+          <input type="submit" class="button border fw margin-top-10" name="register" value="Register" />
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Sign In Popup / End -->

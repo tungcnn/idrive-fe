@@ -5,7 +5,7 @@ export interface OrderDetail {
   id?:number;
   renter?:User;
   own?:User;
-  vehicle?:Vehicle[];
+  vehicle?:Vehicle;
   startTime?:Date;
   endTime?:Date;
   totalPrice?:number;
