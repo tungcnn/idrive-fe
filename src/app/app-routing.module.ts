@@ -8,6 +8,8 @@ import {DashboardBookingsComponent} from './components/dashboard/dashboard-booki
 import {AddVehicleComponent} from './components/vehicle/add-vehicle/add-vehicle.component';
 import {VehicleListComponent} from './components/vehicle/vehicle-list/vehicle-list.component';
 import {CheckoutComponent} from './components/checkout/checkout.component';
+import {SigninComponent} from "./components/signin/signin.component";
+import {SignupComponent} from "./components/signup/signup.component";
 import {BookingConfirmationComponent} from './components/booking-confirmation/booking-confirmation.component';
 
 
@@ -15,6 +17,14 @@ const routes: Routes = [
   {
     path: '',
     component: HomePageComponent
+  },
+  {
+    path: 'sign-in',
+    component: SigninComponent
+  },
+  {
+    path: 'sign-up',
+    component: SignupComponent
   },
   {
     path: 'search-result',
