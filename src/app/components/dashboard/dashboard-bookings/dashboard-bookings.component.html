@@ -67,12 +67,12 @@
         <h4>Booking Requests</h4>
         <ul>
 
-          <li class="pending-booking" *ngFor="let user of users">
+          <li class="pending-booking" *ngFor="let user of orderDetail">
             <div class="list-box-listing bookings">
               <div class="list-box-listing-img"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=120" alt=""></div>
               <div class="list-box-listing-content">
                 <div class="inner">
-                  <h3>{{user.renter}} <span class="booking-status pending">Pending</span><span class="booking-status unpaid">Unpaid</span></h3>
+                  <h3>{{user.renter.fullName}} <span class="booking-status pending">Pending</span><span class="booking-status unpaid">Unpaid</span></h3>
 
                   <div class="inner-booking-list">
                     <h5>Booking Date:</h5>
@@ -84,23 +84,23 @@
                   <div class="inner-booking-list">
                     <h5>Booking Details:</h5>
                     <ul class="booking-list">
-                      <li class="highlighted">{{user.vehicleType}}</li>
+                      <li class="highlighted">{{user.vehicle}}</li>
                     </ul>
                   </div>
 
                   <div class="inner-booking-list">
                     <h5>Price:</h5>
                     <ul class="booking-list">
-                      <li class="highlighted">{{user.price}}</li>
+                      <li class="highlighted">{{user.totalPrice}}</li>
                     </ul>
                   </div>
 
                   <div class="inner-booking-list">
                     <h5>Client:</h5>
                     <ul class="booking-list">
-                      <li>{{user.owner}}</li>
-                      <li>{{user.email}}</li>
-                      <li>{{user.phone}}</li>
+                      <li>{{user.own.fullName}}</li>
+                      <li>{{user.own.email}}</li>
+                      <li>{{user.own.phone}}</li>
                     </ul>
                   </div>
 
