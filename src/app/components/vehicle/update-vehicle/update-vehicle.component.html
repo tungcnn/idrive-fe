@@ -21,6 +21,9 @@
   <div class="row">
     <div class="col-lg-12">
       <form #addVehicleForm="ngForm" (ngSubmit)="handleSubmit(addVehicleForm)">
+        <input hidden [(ngModel)]="vehicleForm.id" name="id">
+        <input hidden [(ngModel)]="vehicleForm.owner" name="owner">
+        <input hidden [(ngModel)]="vehicleForm.cover" name="cover">
         <div id="add-listing">
 
           <!-- Section -->
@@ -100,9 +103,21 @@
             <div class="add-listing-headline">
               <h3><i class="sl sl-icon-picture"></i> Gallery</h3>
             </div>
+
             <div>
               <span *ngFor="let file of files">{{file.name}} </span><br>
             </div>
+
+            <div style="width: 100%">
+              <ng-container *ngFor="let image of images">
+                <div style="width: 100px; float: left; margin-right: 20px">
+                  <img style="width: 100px; height: 100px;" [src]="image.imgUrl"><br>
+                  <i class="sl sl-icon-close" (click)="deleteConfirm(image.id)"></i>
+                </div>
+              </ng-container>
+
+            </div>
+
             <!-- Dropzone -->
             <div class="submit-section">
               <input type="file" class="form-control" #imageInput (change)="onFileSelected($event)">
