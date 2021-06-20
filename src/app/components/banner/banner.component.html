@@ -7,43 +7,41 @@
       <div class="row">
         <div class="col-md-12">
           <h2>Find Nearby Attractions</h2>
-          <h4>Explore top-rated attractions, activities and more</h4>
+          <h4>Expolore top-rated attractions, activities and more</h4>
 
           <div class="main-search-input">
 
-            <div class="main-search-input-item">
-              <input type="text" placeholder="What are you looking for?" value=""/>
-            </div>
-
             <div class="main-search-input-item location">
               <div id="autocomplete-container">
-                <input id="autocomplete-input" type="text" placeholder="Location">
+                <select data-placeholder="All Locations" #location>
+                  <option value="0" selected="">Choose location</option>
+                  <option *ngFor="let location of locationList" [value]="location.id">{{location.name}}</option>
+                </select>
               </div>
               <a href="#"><i class="fa fa-map-marker"></i></a>
             </div>
 
             <div class="main-search-input-item">
-              <select data-placeholder="All Categories" class="chosen-select" >
-                <option>All Vehicles</option>
-                <option>Bicycles</option>
-                <option>Cars</option>
-                <option>Motorbikes</option>
+              <select data-placeholder="All Categories" #type>
+                <option value="0" selected="">Choose vehicle type</option>
+                <option *ngFor="let type of vehicleTypeList" [value]="type.id">{{type.name}}</option>
               </select>
             </div>
 
-            <button class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+            <button class="button" (click)="searchVehicles(location.value, type.value)">Search</button>
 
           </div>
         </div>
       </div>
     </div>
+
   </div>
+
   <!-- Video -->
   <div class="video-container">
     <video poster="assets/images/main-search-video-poster.jpg" loop autoplay muted>
       <source src="assets/images/main-search-video.mp4" type="video/mp4">
     </video>
   </div>
+
 </div>
-
-

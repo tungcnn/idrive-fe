@@ -103,7 +103,7 @@
 
             <!-- Dropzone -->
             <div class="submit-section">
-              <form action="http://www.vasterad.com/file-upload" class="dropzone"></form>
+              <input type="file" class="form-control" #imageInput (change)="onFileSelected($event)">
             </div>
 
           </div>
