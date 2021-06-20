@@ -53,7 +53,7 @@ import { UpdateVehicleComponent } from './components/vehicle/update-vehicle/upda
     SigninComponent,
     SignupComponent,
     BookingConfirmationComponent
-  
+],
 
     imports: [
         BrowserModule,
